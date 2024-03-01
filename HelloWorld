@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+
+  environment {
+    BRANCH = credentials("HELLO")
+  }
+
+  stages {
+    stage("Print Hello World") {
+      steps {
+        script {
+          echo "Hello World, from ${env.BRANCH}"
+        }
+      }
+    }
+  }
+}
+
+

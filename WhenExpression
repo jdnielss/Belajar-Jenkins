@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    environment {
+        BRANCH = 'master'
+    }
+    
+    stages {
+        stage('Test') {
+            when {
+                expression { env.BRANCH == 'master' }
+            }
+            steps {
+                echo "Success"
+            }
+        }
+    }
+}
